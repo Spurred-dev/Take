@@ -11,10 +11,10 @@ if (!file_exists("_ch.txt")) {
   file_put_contents("_ch.txt", "@Spurred");
 }
 if (!file_exists("_users1.txt")) {
-  file_put_contents("_users1.txt");
+  file_put_contents("_users1.txt", "@username");
 }
 if (!file_exists("_users2.txt")) {
-  file_put_contents("_users2.txt");
+  file_put_contents("_users2.txt","@username");
 }
 if (!file_exists("_name.txt")) {
   file_put_contents("_name.txt", "@Spurred");
@@ -57,10 +57,10 @@ $botuser = "@" . bot('getme', ['bot']) ["result"]["username"];
 file_put_contents("_ad.txt", $botuser);
 function acc($acc, $cc) {
   if ( file_get_contents("_lang.txt")=='fa'){
-	  bot('sendMessage', ['chat_id' => $cc, 'text' => "درحال لاگین"]);
+	  bot('sendMessage', ['chat_id' => $cc, 'text' => "🔄 در حال لاگین..."]);
   }
   else{
-	  bot('sendMessage', ['chat_id' => $cc, 'text' => "login in"]);
+	  bot('sendMessage', ['chat_id' => $cc, 'text' => "🔄login in..."]);
   }  
   if (!file_exists('madeline.php')) {
     copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
@@ -76,18 +76,18 @@ function acc($acc, $cc) {
     $vv = $MadelineProto->phone_login($acc);
     echo json_encode($vv);
     if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $cc, 'text' => "حالا کد رو به این صورت بفرست : \n /co 11111"]);
+		bot('sendMessage', ['chat_id' => $cc, 'text' => "حالا کد رو به این صورت بفرست 👇: \n /co 11111"]);
 	}
 	else{
-		bot('sendMessage', ['chat_id' => $cc, 'text' => "Now send me the code like this : \n /co code"]);
+		bot('sendMessage', ['chat_id' => $cc, 'text' => "Now send me the code like this 👇 : \n /co code"]);
 	}
 }
   catch(Exception $e) {
    if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $cc, 'text' => "نمیتونم وارد اکانت شم"]);
+		bot('sendMessage', ['chat_id' => $cc, 'text' => "نمیتونم وارد اکانت شم ☹️"]);
 	}
 	else{
-		bot('sendMessage', ['chat_id' => $cc, 'text' => "I can't login to account"]);
+		bot('sendMessage', ['chat_id' => $cc, 'text' => "I can't login to account ☹️"]);
 	}
     return false;
   }
@@ -107,17 +107,22 @@ function acc($acc, $cc) {
           if ($code != "") {
             $value = $MadelineProto->complete_phone_login(intval($code));
             echo json_encode($value);
-            bot('sendMessage', ['chat_id' => $cc, 'text' => "done login now send /run"]);
+	    if ( file_get_contents("_lang.txt")=='fa'){
+            	bot('sendMessage', ['chat_id' => $cc, 'text' => "لاگین با موفقیت انجام شد 😃"]);
+	    }
+	    else{
+		bot('sendMessage', ['chat_id' => $cc, 'text' => "login seccessfuly completed 😃"]);
+	    }
             break;
           }
         }
         catch(Exception $e) {
           echo $e->getMessage();
           if ( file_get_contents("_lang.txt")=='fa'){
-				bot('sendMessage', ['chat_id' => $cc, 'text' => "لاگین با موفقیت انجام شد"]);
+				bot('sendMessage', ['chat_id' => $cc, 'text' => "لاگین با خطا مواجه شد 😕"]);
 			}
 			else{
-				bot('sendMessage', ['chat_id' => $cc, 'text' => "login seccessfuly completed"]);
+				bot('sendMessage', ['chat_id' => $cc, 'text' => "an error has been accurred while login 😕"]);
 			}
 		}
       }
@@ -216,7 +221,7 @@ function countUsers1($u = "2", $t = "2") {
     }
   }
   if ($list1 == "") {
-    return "no user";
+    return "🕳️";
   }
   else {
     return $list1;
@@ -232,7 +237,7 @@ function countUsers1($u = "2", $t = "2") {
       }
     }
     if ($list1 == "") {
-      return "no user";
+      return "🕳️";
     }
     else {
       return $list1;
@@ -250,7 +255,7 @@ function countUsers2($u = "2", $t = "2") {
     }
   }
   if ($list2 == "") {
-    return "no user";
+    return "🕳️";
   }
   else {
     return $list2;
@@ -266,7 +271,7 @@ function countUsers2($u = "2", $t = "2") {
       }
     }
     if ($list2 == "") {
-      return "no user";
+      return "🕳️";
     }
     else {
       return $list2;
@@ -314,19 +319,19 @@ function run($update) {
       if (!in_array($user, $lists1)) {
         file_put_contents("_users1.txt", "\n" . $user, FILE_APPEND);
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر به لیست 1 اضافه شد: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => " این یوزر به لیست 1 اضافه شد 👇:\n @$user"]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "user added to list 1: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "this user added to list 1 👇:\n @$user"]);
 		}
 	  
       }
       else {
 		  if ( file_get_contents("_lang.txt")=='fa'){
-			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر قبلا وجود داشت @$user"]);
+			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر قبلا وجود داشت 🧐 \n @$user"]);
 		  }
 		  else{
-			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "The user already exists @$user"]);
+			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "The user already exists 🧐 \n @$user"]);
 		  }
       }
     }
@@ -335,19 +340,19 @@ function run($update) {
       if (!in_array($user, $lists2)) {
         file_put_contents("_users2.txt", "\n" . $user, FILE_APPEND);
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر به لیست 2 اضافه شد: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => " این یوزر به لیست 2 اضافه شد 👇:\n @$user"]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "user added to list 2: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "this user added to list 2 👇:\n @$user"]);
 		}
 	  
       }
       else {
 		  if ( file_get_contents("_lang.txt")=='fa'){
-			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر قبلا وجود داشت @$user"]);
+			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر قبلا وجود داشت 🧐 \n @$user"]);
 		  }
 		  else{
-			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "The user already exists @$user"]);
+			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "The user already exists 🧐 \n @$user"]);
 		  }
       }
     }
@@ -367,20 +372,20 @@ function run($update) {
       $t = explode(" ", $text) [1];
       file_put_contents("_type1.txt", $t);
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "تایپ چکر 1 تغییر کرد به: $t"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "تایپ چکر 1 تغییر کرد به: $t ✅"]);
 	  }
 	  else{
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "done change the checker 1 type to $t"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "checker 1 type changed to $t ✅"]);
 	  }
     }
 	if (preg_match("/\/set2 (.*)/", $text)) {
       $t = explode(" ", $text) [1];
       file_put_contents("_type2.txt", $t);
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "تایپ چکر2 تغییر کرد به: $t"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "تایپ چکر 2 تغییر کرد به: $t ✅"]);
 	  }
 	  else{
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "done change the checker 2 type to $t"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "checker 2 type changed to $t ✅"]);
 	  }
     }
 	if (preg_match("/\/del1 @(.*)/", $text)) {
@@ -389,10 +394,10 @@ function run($update) {
         $data1 = str_replace("\n" . $user, "", file_get_contents("_users1.txt"));
         file_put_contents("_users1.txt", $data1);
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر از لیست 1 حذف شد: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر از لیست 1 حذف شد : \n @$user ❌"]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "user deleted from list 1: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "user deleted from list 1: \n @$user ❌"]);
 		}
       }
     }
@@ -402,10 +407,10 @@ function run($update) {
         $data2 = str_replace("\n" . $user, "", file_get_contents("_users2.txt"));
         file_put_contents("_users2.txt", $data);
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر از لیست 2 حذف شد @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "یوزر از لیست 2 حذف شد : \n @$user ❌"]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "user deleted from list 2: @$user"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "user deleted from list 2: \n @$user ❌"]);
 		}
       }
     }
@@ -432,54 +437,54 @@ function run($update) {
       file_put_contents("_users1.txt", "");
 	  file_put_contents("_users2.txt", "");
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست ها پاکسازی شدند"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست ها پاکسازی شدند ✅"]);
 	  }
 	  else{
-	      bot('sendMessage', ['chat_id' => $chat_id, 'text' => "Both list cleared"]);
+	      bot('sendMessage', ['chat_id' => $chat_id, 'text' => "Both list cleared ✅"]);
 	  }
     }
 	if (preg_match("/\/delall1/", $text)) {
       file_put_contents("_users1.txt", "");
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 1 پاکسازی شد"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 1 پاکسازی شد ✅"]);
 	  }
 	  else{
-	      bot('sendMessage', ['chat_id' => $chat_id, 'text' => "All saved users from list 1 deleted"]);
+	      bot('sendMessage', ['chat_id' => $chat_id, 'text' => "All saved users from list 1 deleted ✅"]);
 	  }
     }
 	if (preg_match("/\/delall2/", $text)) {
 	  file_put_contents("_users2.txt", "");
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 2 پاکسازی شد"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => " لیست 2 پاکسازی شد ✅"]);
 	  }
 	  else{
-	      bot('sendMessage', ['chat_id' => $chat_id, 'text' => "All saved users from list 2 deleted"]);
+	      bot('sendMessage', ['chat_id' => $chat_id, 'text' => "All saved users from list 2 deleted ✅"]);
 	  }
     }
     if (preg_match("/\/list1/", $text)) {
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 1: \n " . countUsers1() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝 لیست 1: \n " . countUsers1() ]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "list 1 usernames: \n " . countUsers1() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝list 1 usernames: \n " . countUsers1() ]);
 		}
     }
 	if (preg_match("/\/list2/", $text)) {
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 2: \n " . countUsers2() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝 لیست 2: \n " . countUsers2() ]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "list 2 usernames: \n " . countUsers2() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝list 2 usernames: \n " . countUsers2() ]);
 		}
     }
 	if (preg_match("/\/lists/", $text)) {
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 1: \n " . countUsers1() ]);
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "لیست 2: \n " . countUsers2() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝 لیست 1: \n " . countUsers1() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝 لیست 2: \n " . countUsers2() ]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "list 1 usernames: \n " . countUsers1() ]);
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "list 2 usernames: \n " . countUsers2() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝list 1 usernames: \n " . countUsers1() ]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "📝list 2 usernames: \n " . countUsers2() ]);
 		}
     }
     if (preg_match("/\/info/", $text)) {
@@ -498,12 +503,14 @@ function run($update) {
 	  }
     }
 	 if (preg_match("/\/start/", $text)) {
-	 bot('sendMessage', ['chat_id' => $chat_id, 'text' => "wellcome to Ashy grim Taker
+	 bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🔰wellcome to Ashy grim Taker🔰
 
-get command list:
+⭕️get command list:
 /help
-لیست دستورات:
-/help"]);
+⭕️لیست دستورات:
+/help
+⭕️choose your language
+🇮🇷| /lang fa/en "]);
 	 }
     if (preg_match("/\/help/", $text)) {
     	  if ( file_get_contents("_lang.txt")=='fa'){
@@ -686,30 +693,30 @@ ______________
       $t = explode(" ", $text) [1];
       file_put_contents("_name.txt", $t);
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "اسم کانال عوض شد به: $t"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️اسم کانال عوض شد به: $t"]);
 	  }
 	  else{
-		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "done change the name to $t"]);
+		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️channel name changed to $t"]);
 	  }
     }
     if (preg_match("/\/sa (.*)/", $text)) {
       $t = explode(" ", $text) [1];
       file_put_contents("_about.txt", $t);
 	  	if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "درباره عوض شد به: $t"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️درباره عوض شد به: $t"]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "done change the About to $t"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️About changed to $t"]);
 		}
     }
     if (preg_match("/\/sm (.*)/", $text)) {
       $t = explode(" ", $text) [1];
       file_put_contents("_ch.txt", $t);
 		if ( file_get_contents("_lang.txt")=='fa'){
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "حقوق تعلق داده شد به: $t"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️حقوق تعلق داده شد به: $t"]);
 		}
 		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "done change the msg to $t"]);
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️msg right changed to $t"]);
 		}
     }
     if (preg_match("/\/acc /", $text)) {
@@ -738,28 +745,28 @@ ______________
       exec("pm2 stop $nn");
 	  exec("pm2 stop $nnn");
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "چکر ها متوقف شدند"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❌چکر ها متوقف شدند"]);
 	  }
 	  else{
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "2 checkers stoped"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❌checkers stoped"]);
 	  }
     }
 	if (preg_match("/\/stop1/", $text)) {
       exec("pm2 stop $nn");
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "چکر 1 متوقف شد"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❌چکر 1 متوقف شد"]);
 	  }
 	  else{
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "checker1 stoped"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❌checker1 stoped"]);
 	  }
     }
 	if (preg_match("/\/stop2/", $text)) {
       exec("pm2 stop $nnn");
 	  if ( file_get_contents("_lang.txt")=='fa'){
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "چکر 2 متوقف شد"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❌چکر 2 متوقف شد"]);
 	  }
 	  else{
-		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "checker2 stoped"]);
+		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❌checker2 stoped"]);
 	  }
     }
   }
