@@ -528,8 +528,17 @@ message 👉 @AeRoSpacinG"]);
 /help
 ⭕️لیست دستورات:
 /help
-⭕️choose your language
-🇮🇷| /lang fa/en "]);
+⭕️choose English
+🇺🇸| /lang en 
+(Default is en)
+⭕️انتخاب زبان فارسی
+🇮🇷| /lang fa
+
+⭕️Support Center:
+🖥️| /support
+⭕️بخش پشتیبانی:
+🖥️| /support
+"]);
 	 }
     if (preg_match("/\/help/", $text)) {
     	  if ( file_get_contents("_lang.txt")=='fa'){
