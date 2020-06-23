@@ -15,10 +15,10 @@ $settings['app_info']['api_hash'] = '4ace69ed2f78cec268dc7483fd3d3424';
 $MadelineProto = new \danog\MadelineProto\API('mdddd.madeline', $settings);
 $MadelineProto->start();
 if ( file_get_contents("_lang.txt")=='fa'){
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 2 استارت خورد | مود - چنل"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 2 استارت خورد✅ \n مود چنل!"]);
 }
 else{
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 2 start runing | type - channel"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 1 start runing✅ \n type channel!"]);
 }
 
 
@@ -38,7 +38,7 @@ while(1){
                         $MadelineProto->channels->updateUsername(['channel' => $chat_mack, 'username' => $user]);
                         
                         $ch = file_get_contents("_ch.txt");
-				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| New Update : @$user !\n❗️| Channel Checker : @Nightmare !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
+				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| Taked ID : @$user !\n❗️| taker : @AeRoSpacinG !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
                         $MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send ".$Text]);
                         $MadelineProto->messages->sendMessage(['peer' => $chat_mack, 'message' => $Text]);
                         $data = str_replace("\n".$user,"", file_get_contents("_users2.txt"));
@@ -82,10 +82,10 @@ $settings['app_info']['api_hash'] = '4ace69ed2f78cec268dc7483fd3d3424';
 $MadelineProto = new \danog\MadelineProto\API('mdddd.madeline', $settings);
 $MadelineProto->start();
 if ( file_get_contents("_lang.txt")=='fa'){
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 2 استارت خورد | مود - اکانت"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 2 استارت خورد✅ \n مود اکانت!"]);
 }
 else{
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 2 start runing | type - account"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 2 start runing✅ \n type Account!"]);
 }
 $i = 0;
 while(1){
@@ -100,7 +100,7 @@ while(1){
                         echo "Done user @$user";
                         $MadelineProto->account->updateUsername(['username'=>$user]);
                         $ch = file_get_contents("_ch.txt");
-				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| New Update : @$user !\n❗️| Channel Checker : @Nightmare !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
+				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| Taked ID : @$user !\n❗️| taker : @AeRoSpacinG !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
                         $MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send ".$Text]);
                         $data = str_replace("\n".$user,"", file_get_contents("_users2.txt"));
                         file_put_contents("_users2.txt", $data);
