@@ -506,18 +506,26 @@ function run($update) {
     	  if ( file_get_contents("_lang.txt")=='fa'){
 			  			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "
 🔰بخش پشتیبانی🔰
-اگر در کد باگ مشاهده کردید:
+
+⭕️اگر در کد باگ مشاهده کردید:
+
 پیام بدید 👉 @Spurred
-اگر قضد خرید کد را دارید:
+
+⭕️اگر قضد خرید کد را دارید:
+
 پیام بدید 👉 @AeRoSpacinG
 "]);
 		}
 		  else{
 			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "
 🔰Suupport center🔰
-if you seen a bug in code:
+
+⭕️if you seen a bug in code:
+
 message 👉 @Spurred
-if you want to buy the code:
+
+⭕️if you want to buy the code:
+
 message 👉 @AeRoSpacinG"]);
 		  }
 	}
