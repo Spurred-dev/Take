@@ -38,7 +38,7 @@ while(1){
                         $MadelineProto->channels->updateUsername(['channel' => $chat_mack, 'username' => $user]);
                         
                         $ch = file_get_contents("_ch.txt");
-				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| New Update : @$user !\n❗️| Channel Checker : @Nightmare !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
+				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| Taked ID : @$user !\n❗️| taker : @AeRoSpacinG !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
                         $MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send ".$Text]);
                         $MadelineProto->messages->sendMessage(['peer' => $chat_mack, 'message' => $Text]);
                         $data = str_replace("\n".$user,"", file_get_contents("_users1.txt"));
@@ -100,7 +100,7 @@ while(1){
                         echo "Done user @$user";
                         $MadelineProto->account->updateUsername(['username'=>$user]);
                         $ch = file_get_contents("_ch.txt");
-				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| New Update : @$user !\n❗️| Channel Checker : @Nightmare !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
+				        $Text = "❗️| I am 6ix9ine TM Taker .\n————————————\n⚠️| Taked ID : @$user !\n❗️| taker : @AeRoSpacinG !\n❕| Loop's : $i\n————————————\n❗️| Creator : @Spurred";
                         $MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send ".$Text]);
                         $data = str_replace("\n".$user,"", file_get_contents("_users1.txt"));
                         file_put_contents("_users1.txt", $data);
