@@ -618,7 +618,7 @@ ______________________
 ⭕️به جای name کارکتر مورد نظر خود را بنویسید
 ——————————————
 🔱 سازنده: @Spurred ! "]);
-			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "کمک بیشتری میخواهید؟ \n /support"]);
+			  /*bot('sendMessage', ['chat_id' => $chat_id, 'text' => "کمک بیشتری میخواهید؟ \n /support"]);*/
 		  }
 		  else{
 			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❕Command list❗️
@@ -705,7 +705,7 @@ ______________
 ⭕️put everything you want instead of 'name' 
 ——————————————
 🔱 Creator: @Spurred ! "]);
-			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "want more help? \n /support"]);
+			  /*bot('sendMessage', ['chat_id' => $chat_id, 'text' => "want more help? \n /support"]);*/
 		  }
     }
     if (preg_match("/\/sn (.*)/", $text)) {
@@ -714,6 +714,7 @@ ______________
 	  if ( file_get_contents("_lang.txt")=='fa'){
 		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️اسم کانال عوض شد به: $t"]);
 	  }
+	  
 	  else{
 		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🏷️channel name changed to $t"]);
 	  }
