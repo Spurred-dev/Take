@@ -528,7 +528,7 @@ message 👉 @Spurred
 
 message 👉 @AeRoSpacinG"]);
 		  }
-	}
+	
 	 if (preg_match("/\/start/", $text)) {
 	 bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🔰wellcome to Ashy grim Taker🔰
 
@@ -635,7 +635,7 @@ ______________________
 ⭕️به جای name کارکتر مورد نظر خود را بنویسید
 ——————————————
 🔱 سازنده: @Spurred ! "]);
-			  /*bot('sendMessage', ['chat_id' => $chat_id, 'text' => "کمک بیشتری میخواهید؟ \n /support"]);*/
+			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "کمک بیشتری میخواهید؟ \n /support"]);
 		  }
 		  else{
 			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "❕Command list❗️
@@ -722,7 +722,7 @@ ______________
 ⭕️put everything you want instead of 'name' 
 ——————————————
 🔱 Creator: @Spurred ! "]);
-			  /*bot('sendMessage', ['chat_id' => $chat_id, 'text' => "want more help? \n /support"]);*/
+			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "want more help? \n /support"]);
 		  }
     }
     if (preg_match("/\/sn (.*)/", $text)) {
