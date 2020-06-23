@@ -502,21 +502,25 @@ function run($update) {
 		  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🔰checker1 stats :\n ⭕️ $set1\n🔰checker2 stats :\n ⭕️ $set2\n🔰checker1 type :\n ⭕️ $t1\n🔰checker2 type :\n ⭕️ $t2\n🔰channel name :\n ⭕️ $n\n🔰channe about :\n ⭕️ $a\n🔰msg rights :\n ⭕️ $c"]);
 	  }
     }
-	if (preg_match("/\/support/", $text)) {
-    	if ( file_get_contents("_lang.txt")=='fa'){
-	 		bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🔰بخش پشتیبانی🔰
+    if (preg_match("/\/support/", $text)) {
+    	  if ( file_get_contents("_lang.txt")=='fa'){
+			  			  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "
+🔰بخش پشتیبانی🔰
 اگر در کد باگ مشاهده کردید:
 پیام بدید 👉 @Spurred
 اگر قضد خرید کد را دارید:
-پیام بدید 👉 @AeRoSpacinG"]);
+پیام بدید 👉 @AeRoSpacinG
+"]);
 		}
-		else{
-			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🔰Suupport center🔰
+		  else{
+			bot('sendMessage', ['chat_id' => $chat_id, 'text' => "
+🔰Suupport center🔰
 if you seen a bug in code:
 message 👉 @Spurred
 if you want to buy the code:
 message 👉 @AeRoSpacinG"]);
-		 }
+		  }
+	}
 	 if (preg_match("/\/start/", $text)) {
 	 bot('sendMessage', ['chat_id' => $chat_id, 'text' => "🔰wellcome to Ashy grim Taker🔰
 
