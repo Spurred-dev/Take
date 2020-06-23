@@ -15,10 +15,10 @@ $settings['app_info']['api_hash'] = '4ace69ed2f78cec268dc7483fd3d3424';
 $MadelineProto = new \danog\MadelineProto\API('mdddd.madeline', $settings);
 $MadelineProto->start();
 if ( file_get_contents("_lang.txt")=='fa'){
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 1 استارت خورد | مود - چنل"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 1 استارت خورد✅ \n مود چنل!"]);
 }
 else{
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 1 start runing | type - channel"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 1 start runing✅ \n type channel!"]);
 }
 
 
@@ -82,10 +82,10 @@ $settings['app_info']['api_hash'] = '4ace69ed2f78cec268dc7483fd3d3424';
 $MadelineProto = new \danog\MadelineProto\API('mdddd.madeline', $settings);
 $MadelineProto->start();
 if ( file_get_contents("_lang.txt")=='fa'){
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 1 استارت خورد | مود - اکانت"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send چکر 1 استارت خورد✅ \n مود اکانت!"]);
 }
 else{
-	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 1 start runing | type - account"]);
+	$MadelineProto->messages->sendMessage(['peer' => file_get_contents("_ad.txt"), 'message' => "/send checker 1 start runing✅ \n type Account!"]);
 }
 $i = 0;
 while(1){
